@@ -1,0 +1,11 @@
+[package]
+name = "piston-tutorial"
+version = "0.1.0"
+authors = ["Yeonho Jang <siabard@gmail.com>"]
+
+[[bin]]
+name="part1"
+path="src/bin/part1.rs"
+
+[dependencies]
+piston_window="0.77.0"
