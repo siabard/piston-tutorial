@@ -4,6 +4,7 @@ extern crate piston_window;
 
 use piston_window::*;
 
+#[allow(unused_variables)]
 fn main() {
     let mut window: PistonWindow = WindowSettings::new("piston part 1", [600, 600])
         .exit_on_esc(true)

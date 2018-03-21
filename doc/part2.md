@@ -4,7 +4,7 @@ part1 에서 간단한 예제를 해보았으니, 이제는 키보드로 움직�
 
 게임정보를 저장하는 구조체를 구성합니다.
 
-```
+```rust
 struct Game {
     rotation: f64;
 }
@@ -12,7 +12,7 @@ struct Game {
 
 다음으로 구현을 합니다. 기존에 있던 게임 및 렌더링 로직을 `on_update`, `on_render`함수로 변경할 겁니다.
 
-```
+```rust
 impl Game {
     fn new() -> Game {
         Game { rotation: 0.0 }
@@ -42,7 +42,7 @@ impl Game {
 
 이제 Game 구조체를 생성하고, 마지막으로 해당 구조체를 사용하도록 이벤트 루프를 고칩니다.
 
-```
+```rust
 let mut game: Game = Game::new();
 
 while let Some(e) = window.next() {
@@ -60,7 +60,7 @@ while let Some(e) = window.next() {
 
 `part2.rs` 파일에 해당 내용을 저장하고, Cargo.toml 에 아래를 추가합니다.
 
-```
+```toml
 [[bin]]
 name="part2"
 path="src/bin/part2.rs"
@@ -72,7 +72,7 @@ path="src/bin/part2.rs"
 
 사용자 입력을 얻어오는 것은 다른 이벤트 처리와 유사합니다.
 
-```
+```rust
  if let Some(Button::Keyboard(key)) = e.press_args() {
      game.on_press(key);
  }
@@ -84,7 +84,7 @@ if let Some(Button::Keyboard(key)) = e.release_args() {
 
 `on_press`, `on_release` 을 작성하기 전에, dt 기반으로한 이동을 하기위해 몇가지 불린 값이 필요합니다. 또한 사각형의 x, y 변수도 추가합니다.
 
-```
+```rust
 struct Game {
     rotation: f64,
     x: f64,
@@ -98,7 +98,7 @@ struct Game {
 
 등록된 변수에 대하여 `Game::new()` 부분에서 기본값을 설정하도록 합니다.
 
-```
+```rust
 fn new() -> Game {
     Game {
         rotation: 0.0,
@@ -114,7 +114,7 @@ fn new() -> Game {
 
 이제 `on_press`, `on_release` 을 작성합니다.
 
-```
+```rust
 fn on_press(&mut self, key: Key) {
     match key {
         Key::Up => self.up_d = true,
@@ -140,7 +140,7 @@ fn on_release(&mut self, key: Key) {
 
 끝으로 update 부분에서 dt 에 맞추어 이동을 시킵니다.
 
-```
+```rust
 fn on_update(&mut self, upd: UpdateArgs) {
     self.rotation += 3.0 * upd.dt;
     if self.up_d {
@@ -163,7 +163,7 @@ fn on_update(&mut self, upd: UpdateArgs) {
 
 이제 render 에서 x,y 위치에 맞게 사각형을 그려주면 됩니다.
 
-```
+```rust
 rectangle(
     red,
     square,
