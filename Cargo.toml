@@ -7,5 +7,9 @@ authors = ["Yeonho Jang <siabard@gmail.com>"]
 name="part1"
 path="src/bin/part1.rs"
 
+[[bin]]
+name="part2"
+path="src/bin/part2.rs"
+
 [dependencies]
 piston_window="0.77.0"
