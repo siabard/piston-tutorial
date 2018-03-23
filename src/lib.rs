@@ -6,3 +6,4 @@ extern crate gfx_graphics;
 extern crate piston_window;
 
 pub mod object;
+pub mod object_v2;

@@ -1,5 +1,5 @@
 use piston_window::*;
-use gfx_device_gl::{CommandBuffer, OutputMerger, Resources};
+use gfx_device_gl::{CommandBuffer, Resources};
 use gfx_graphics::GfxGraphics;
 
 pub struct Object {

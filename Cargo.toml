@@ -15,6 +15,9 @@ path="src/bin/part2.rs"
 name="part3"
 path="src/bin/part3.rs"
 
+[[bin]]
+name="part4"
+path="src/bin/part4.rs"
 
 [dependencies]
 piston_window="0.77.0"
