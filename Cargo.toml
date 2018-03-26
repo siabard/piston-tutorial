@@ -19,9 +19,15 @@ path="src/bin/part3.rs"
 name="part4"
 path="src/bin/part4.rs"
 
+[[bin]]
+name="part5"
+path="src/bin/part5.rs"
+
 [dependencies]
 piston_window="0.77.0"
 piston2d-gfx_graphics = "0.50.0"
 find_folder = "0.3.0"
 gfx = "0.17.1"
 gfx_device_gl = "0.15.0"
+nalgebra="*"
+ncollide="*"
